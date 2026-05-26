@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-03-25課堂練習</title>
+    
+    <link rel="stylesheet" href="css/normal.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    
+    <style>
+        /* 全域樣式優化 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* 景點區塊樣式 */
+        .spot-section {
+            background: #fff;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .spot-section h2 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        /* 圖片群組排版 (Flexbox) */
+        .image-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0 10px 0;
+        }
+
+        .image-gallery img {
+            flex: 1;
+            min-width: 280px; /* 確保在手機上會自動換行 */
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        /* 嵌入框架與地圖響應式優化 */
+        .embed-container {
+            margin: 20px 0;
+        }
+        
+        iframe {
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            max-width: 100%;
+        }
+
+        /* Canvas 畫布美化 */
+        canvas {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            display: block;
+            margin-top: 10px;
+            max-width: 100%; /* 防止小螢幕爆版 */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>2026-03-25課堂練習</h1>
+    </header>
+
+    <main>
+        <article>
+            <section class="spot-section">
+                <h2>陽明山公園</h2>
+                <p>原名中興賓館的「陽明書屋」，興建於民國58年至59年間，昔為先總統蔣公接待國內外貴賓及夏日避暑之處，係蔣公在台唯一親自擇定興建的行館；今日則成為陽明山國家公園重要人文史蹟建物之一，並提供遊客諮詢及導覽解說等各項服務，是一處兼具自然與人文、知性與感性的參觀遊憩場所。</p>
+                
+                <figure>
+                    <div class="image-gallery">
+                        <img src="photos/matsu01.jpg" alt="陽明山景色一">
+                        <img src="photos/matsu02.jpg" alt="陽明山景色二">
+                        <img src="photos/matsu03.jpg" alt="陽明山景色三">
+                    </div>
+                    <figcaption class="gallery-caption">圖：陽明山國家公園與歷史行館周邊景致</figcaption>
+                </figure>
+            </section>
+
+            <section class="spot-section">
+                <h2>草山公園</h2>
+                <p>原名中興賓館的「陽明書屋」，興建於民國58年至59年間，昔為先總統蔣公接待國內外貴賓及夏日避暑之處，係蔣公在台唯一親自擇定興建的行館；今日則成為陽明山國家公園重要人文史蹟建物之一，並提供遊客諮詢及導覽解說等各項服務，是一處兼具自然與人文、知性與感性的參觀遊憩場所。</p>
+                
+                <figure>
+                    <div class="image-gallery">
+                        <img src="photos/matsu04.jpg" alt="草山景色一">
+                        <img src="photos/matsu05.jpg" alt="草山景色二">
+                        <img src="photos/matsu06.jpg" alt="草山景色三">
+                    </div>
+                    <figcaption class="gallery-caption">圖：草山公園人文與自然生態實錄</figcaption>
+                </figure>
+            </section>
+        </article>
+
+        <section class="embed-container">
+            <h3>外部資源嵌入</h3>
+            <div class="embed-container">
+                <iframe src="https://www.scu.edu.tw" width="100%" height="400" title="東吳大學官方網站"></iframe>
+            </div>
+            
+            <div class="embed-container">
+                <iframe src="https://maps.google.com/maps?q=東吳大學&output=embed" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade" title="東吳大學周邊地圖"></iframe>
+            </div>
+        </section>
+
+        <section class="embed-container">
+            <h3>JavaScript 畫布練習 (Canvas)</h3>
+            <canvas id="myCanvas" width="600" height="150"></canvas>
+        </section>
+    </main>
+
+    <script>
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // 繪製水平青綠色線條
+        ctx.beginPath();
+        ctx.moveTo(50, 50);
+        ctx.lineTo(600, 50);
+        ctx.strokeStyle = 'paleturquoise';
+        ctx.lineWidth = 6; // 修正：在 JS 中數值不需加引號
+        ctx.stroke();
+
+        // 繪製垂直粉紅色線條
+        ctx.beginPath();
+        ctx.moveTo(325, 10);
+        ctx.lineTo(325, 100);
+        ctx.strokeStyle = 'pink';
+        ctx.lineWidth = 6;
+        ctx.stroke();
+    </script>
+
+</body>
+</html>

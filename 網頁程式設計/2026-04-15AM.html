@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-04-15課堂練習</title>
+    <style>
+        /* 全域樣式設定 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        h3 {
+            color: #7f8c8d;
+            margin-top: 0;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+
+        /* 現代化表格樣式設計 */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* 關鍵：合併雙線邊框為單線邊框 */
+            margin-bottom: 30px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        caption {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            text-align: left; /* 讓表格標題靠左對齊，更有質感 */
+        }
+
+        th, td {
+            border: 1px solid #dcdde1; /* 用細緻的灰色邊框代替粗黑框 */
+            padding: 12px 15px; /* 增加內襯距，讓文字有呼吸空間 */
+            text-align: center; /* 文字預設居中 */
+        }
+
+        th {
+            background-color: #f5f6fa; /* 賦予標題列淡淡的背景色 */
+            color: #2f3640;
+            font-weight: 600;
+        }
+
+        /* 斑馬紋效果：讓偶數行有微弱背景色，提升長表格的可讀性 */
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* 當滑鼠移上去時顯現高亮效果 */
+        tbody tr:hover {
+            background-color: #f1f2f6;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>2026-04-15AM課堂練習</h1>
+        <h3>表格製作與欄位合併</h3>
+    </header>
+    
+    <hr>
+    
+    <table>
+        <caption>這是一個簡單的表格</caption>
+        <thead>
+            <tr>
+                <th>標題1</th>
+                <th>標題2</th>
+                <th>標題3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>東吳大學1</td>
+                <td>東吳大學2</td>
+                <td>東吳大學3</td>
+            </tr>
+            <tr>
+                <td>東吳大學1</td>
+                <td>東吳大學2</td>
+                <td>東吳大學3</td>
+            </tr>
+            <tr>
+                <td>東吳大學1</td>
+                <td>東吳大學2</td>
+                <td>東吳大學3</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <hr>
+    
+    <table>
+        <caption>零件價格表</caption>
+        <thead>
+            <tr>
+                <th>項目</th>
+                <th colspan="2">金額</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A零件</td>
+                <td rowspan="3">700</td>
+                <td rowspan="3">三個產品合購可8折</td>
+            </tr>
+            <tr>
+                <td>B零件</td>            
+            </tr>
+            <tr>
+                <td>C零件</td>            
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>

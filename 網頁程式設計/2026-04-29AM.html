@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作業總覽 - 課堂練習成果全紀錄</title>
+    <link rel="stylesheet" href="css/normal.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    <style>
+        /* ===================================================
+           全域樣式與版面初始化
+           =================================================== */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 40px 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+
+        header p {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        /* ===================================================
+           現代化網頁表格樣式設計
+           =================================================== */
+        table {
+            width: 100%;
+            max-width: 1000px; /* 改用最大寬度限制，在大螢幕與手機上都能完美適應 */
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* 增加高級感的卡片陰影 */
+            border-collapse: collapse; /* 改為精緻的單線邊框 */
+            border-radius: 8px;
+            overflow: hidden; /* 確保圓角能切齊內部欄位 */
+        }
+
+        caption {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 15px 0;
+            caption-side: top;
+            text-align: left;
+            text-indent: 10px;
+        }
+
+        th, td {
+            padding: 14px 20px; /* 寬鬆的內襯距，讓文字有呼吸空間 */
+            text-align: center;
+            border-bottom: 1px solid #eef2f5; /* 細緻的橫向底線，不壓縮空間 */
+        }
+
+        th {
+            background-color: #34495e; /* 深灰藍色商務風格標題列 */
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        td {
+            font-size: 1rem;
+            color: #4a5568;
+            vertical-align: middle; /* 修正原本的 bottom，讓內容完美垂直居中 */
+        }
+
+        /* 斑馬紋效果：偶數行給予極淡灰藍色背景 */
+        tbody tr:nth-child(even) {
+            background-color: #fdfefe;
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #f4f6f7;
+        }
+
+        /* 懸停動態效果：滑鼠移過去時該行微微亮起，增添互動感 */
+        tbody tr:hover {
+            background-color: #eaeded;
+            transition: background-color 0.15s ease;
+        }
+
+        /* ===================================================
+           超連結與按鈕化美化
+           =================================================== */
+        td a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(52, 152, 219, 0.2);
+            transition: all 0.2s ease;
+        }
+
+        td a:hover {
+            background-color: #2980b9;
+            transform: translateY(-1px); /* 懸停時按鈕微幅向上浮動 */
+            box-shadow: 0 4px 6px rgba(41, 128, 185, 0.3);
+        }
+
+        /* 尚未開放或備註說明的特殊文字顏色 */
+        .text-muted {
+            color: #95a5a6;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>網頁前端開發作業總覽</h1>
+        <p>東吳大學資訊科學系 · 課堂實作成果展示入口</p>
+    </header>
+
+    <table>
+        <caption>我的作業總覽清單</caption>
+        <thead>
+            <tr>
+                <th style="width: 10%;">序</th>
+                <th style="width: 25%;">作業日期</th>
+                <th style="width: 25%;">點我觀看</th>
+                <th style="width: 40%;">備註說明與實作核心</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td><strong>3月04日</strong></td>
+                <td><a href="2026-03-04.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">基本 HTML5 標籤、Meta 設定與網頁結構宣告</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td><strong>3月11日</strong></td>
+                <td><a href="2026-03-11.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">清單標籤、文字排版格式（Ruby、內嵌 CSS 樣式與程式碼區塊）</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td><strong>3月18日</strong></td>
+                <td><a href="2026-03-18A.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">HTML5 語意化佈局與舊式 Float 側邊欄版面劃分</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td><strong>3月25日</strong></td>
+                <td><a href="2026-03-25.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">Figure 圖表語意、iframe 框架嵌入、Canvas 畫布與 JS 基礎繪圖</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td><strong>4月08日</strong></td>
+                <td><a href="2026-04-08影像地圖.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">影像地圖 (Image Map) 區塊分割、座標對位與字型樣式設定</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td><strong>4月15日</strong></td>
+                <td><a href="2026-04-15AM.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">表格 (Table) 綜合製作、colspan 與 rowspan 進階跨欄跨列合併</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td><strong>4月29日 (AM)</strong></td>
+                <td><a href="2026-04-29線性漸層.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">CSS3 線性漸層 (Linear Gradient) 方向性與自訂停靠點應用</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td><strong>4月29日 (PM)</strong></td>
+                <td><a href="2026-04-29PM.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">放射狀漸層 (Radial) 尺寸限制與重複性漸層 (Repeating) 設計</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td><strong>5月06日</strong></td>
+                <td><a href="2026-05-06 JavaScript基礎.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">JavaScript 基礎、外部引進 (External Script) 與事件觸發應用</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td><strong>5月13日</strong></td>
+                <td><a href="2026-05-13pm.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">CSS3 動畫關鍵影格 (@keyframes) 實作與速度曲線對比展示</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td><strong>首頁範例之1</strong></td>
+                <td><a href="首頁範例之1.html" target="_blank">進入檢視</a></td>
+                <td class="text-muted">首頁範例之1</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+
+</html>

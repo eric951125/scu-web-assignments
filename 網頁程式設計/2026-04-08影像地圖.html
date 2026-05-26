@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-04-08課堂練習</title>
+    
+    <link rel="stylesheet" href="css/normal.css">
+    <link rel="stylesheet" href="css/mystyle.css">
+    
+    <style>
+        /* 全域網頁基礎字型與重設 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 標題與版面美化 */
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        h3 {
+            color: #7f8c8d;
+            margin-top: 0;
+        }
+
+        /* 地圖圖片響應式優化（防止大圖在手機上撐破螢幕） */
+        .map-container {
+            max-width: 100%;
+            height: auto;
+            overflow-x: auto; /* 若圖片過大允許橫向滾動 */
+            margin: 20px 0;
+        }
+
+        .map-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 英文字型樣式優化 */
+        p.font1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 2.5rem; /* 改用相對單位 rem，更具彈性 */
+            margin: 15px 0;
+        }
+        
+        p.font2 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.875rem;
+            margin: 15px 0;
+        }
+    </style>    
+</head>
+<body>
+
+    <header>
+        <h1 class="hsize">2026-04-08課堂練習</h1>
+        <h3>影像地圖應用</h3>
+    </header>
+    
+    <hr>
+    
+    <div class="map-container">
+        <img src="photos/taiwan.jpg" width="600" height="1024" usemap="#MyMap" alt="台灣地圖（點擊不同區域可跳轉至相應頁面）">
+        
+        <map name="MyMap">
+            <area shape="rect" coords="480,20,550,90" href="page0325.html" alt="大台北地區">
+            <area shape="circle" coords="500,250,80" href="page0325.html" alt="宜蘭地區">
+            <area shape="poly" coords="300,100,420,160,390,180,260,120,300,100" href="page0325.html" alt="新竹地區">
+        </map>
+    </div>
+
+    <main>
+        <p class="font1">Welcome to Taiwan (Serif - 襯線體)</p>  
+        <p class="font2">Welcome to Taiwan (Sans-serif - 無襯線體)</p>  
+    </main>
+   
+</body>
+</html>

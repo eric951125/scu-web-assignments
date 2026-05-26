@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-05-13PM課堂練習</title>
+    <style>
+        /* 全域初始化 */
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f5f6fa;
+            overflow-x: hidden; /* 防止物體移出螢幕時產生水平捲軸 */
+        }
+
+        /* 頂部靜態標題區 */
+        header {
+            background-color: #ffffff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 10; /* 確保標題層級在最上方，不會被移動的動畫遮擋 */
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin: 0 0 5px 0;
+            font-size: 1.8rem;
+        }
+
+        h3 {
+            color: #7f8c8d;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        /* ===================================================
+           CSS 動態舞台與動畫設定
+           =================================================== */
+        
+        /* 定義斜向移動的關鍵影格 */
+        @keyframes diagonal-move {
+            from { left: 50px; top: 150px; }
+            to { left: 450px; top: 450px; }
+        }
+
+        /* 建立一個通用的動畫類別 (Class)，方便重複利用 */
+        .anim-box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            
+            /* 綁定動畫屬性 */
+            animation-name: diagonal-move;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+            
+            /* 讓文字在方塊內完美置中 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* 透過各別 ID 分流展示三種不同的速度曲線 (Timing Function) */
+        
+        /* 1號方塊：ease (預設值，漸速起步、快速移動、慢速停工) */
+        #box-ease {
+            background-color: #3498db;
+            animation-timing-function: ease;
+            /* 稍微調整初始橫向間距，讓三個方塊不要完全重疊 */
+            transform: translateX(0px); 
+        }
+
+        /* 2號方塊：ease-in-out (慢速起步、中途加速、慢速收尾，最平滑) */
+        #box-ease-in-out {
+            background-color: #2ecc71;
+            animation-timing-function: ease-in-out;
+            transform: translateX(120px); /* 向右挪一點，平行展示 */
+        }
+
+        /* 3號方塊（圖片容器）：ease-out (快速起步、慢速停工) */
+        #box-ease-out {
+            background-color: #e74c3c;
+            animation-timing-function: ease-out;
+            transform: translateX(240px); /* 再向右挪一點 */
+            overflow: hidden; /* 確保裡面的圖片不會超出方塊圓角 */
+        }
+
+        /* 規範內部的圖片尺寸 */
+        .anim-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保持圖片比例填充 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>2026-05-13PM課堂練習</h1>
+        <h3>網頁動畫效果（速度曲線對比）</h3>
+    </header>
+
+    <main>
+        <div id="box-ease" class="anim-box">
+            <span>Ease</span>
+        </div>
+
+        <div id="box-ease-in-out" class="anim-box">
+            <span>In-Out</span>
+        </div>
+
+        <div id="box-ease-out" class="anim-box">
+            <img src="photos/bird.jpg" alt="小鳥飛行圖">
+        </div>
+    </main>
+
+</body>
+
+</html>
